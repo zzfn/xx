@@ -14,12 +14,18 @@ export function calculateCost(attributes: string) {
     for (let i = 0; i < arr.length; i++) {
       if (arr[i] < 7) {
         const sevensCount = arr.filter(num => num >= 7).length;
-        if (sevensCount === 2) {
-          cost += 5500;
-          steps.push(`第三个6升7，花费 5500 仙玉`);
+        if (sevensCount === 0) {
+          cost += 1200;
+          steps.push(`第一个6升7，花费 1200 仙玉`);
+        } else if (sevensCount === 1) {
+          cost += 2400;
+          steps.push(`第二个6升7，花费 2400 仙玉`);
+        } else if (sevensCount === 2) {
+          cost += 6000;
+          steps.push(`第三个6升7，花费 6000 仙玉`);
         } else if (sevensCount === 3) {
-          cost += 6600;
-          steps.push(`第四个6升7，花费 6600 仙玉`);
+          cost += 7200;
+          steps.push(`第四个6升7，花费 7200 仙玉`);
         }
         arr[i]++;
         return;
