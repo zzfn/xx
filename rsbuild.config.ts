@@ -3,6 +3,7 @@ import { pluginReact } from '@rsbuild/plugin-react';
 
 export default defineConfig({
   html: {
+    template: './template.html',
     favicon: 'https://cdn.zzfzzf.com/assets/favicon.ico',
     title: '寻仙攻略',
   },
