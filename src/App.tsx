@@ -17,7 +17,7 @@ const App = () => {
     };
 
     return (
-        <div className='min-h-screen'>
+        <div className='min-h-screen p-6'>
             <h1 className='text-xl text-center my-2'>寻仙圣宠升级到 8888 计算器</h1>
             <div>
                 <div className="overflow-x-auto">
