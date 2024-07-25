@@ -17,10 +17,10 @@ const App = () => {
     };
 
     return (
-      <div>
-          <h5>寻仙圣宠升级到 8888 计算器</h5>
+      <div className='bg-slate-900 min-h-screen'>
+          <h5 className='text-white text-center'>寻仙圣宠升级到 8888 计算器</h5>
           <div>
-              <ul style={{
+              <ul className='text-white' style={{
                   maxHeight: '200px',
                   overflowY:'auto'
               }}>
