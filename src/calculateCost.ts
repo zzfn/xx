@@ -52,7 +52,7 @@ export function calculateCost(attributes: string) {
       }
     }
   };
-
+// 4 8 32 36
   while (attrArray.some(num => num < 8)) {
     upgrade(attrArray);
   }
