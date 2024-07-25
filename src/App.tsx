@@ -17,21 +17,22 @@ const App = () => {
     };
 
     return (
-      <div className='bg-slate-900 min-h-screen'>
+      <div className='min-h-screen'>
           <h5 className='text-white text-center'>寻仙圣宠升级到 8888 计算器</h5>
           <div>
               <ul className='text-white' style={{
                   maxHeight: '200px',
-                  overflowY:'auto'
+                  overflowY: 'auto'
               }}>
                   {steps.map((step, index) => (
                       <li key={index}>{step}</li>
                   ))}
               </ul>
-              <p className='text-red-900'>共计所需{cost}仙玉</p>
+              <p role="alert" className="alert">共计所需{cost}仙玉</p>
+              <div className="divider"></div>
               <input
                   placeholder={'宝宝四维，如6688'}
-                  className='border-2 border-slate-300'
+                  className='input input-bordered'
                   minLength={4}
                   maxLength={4}
                   value={attributes}
@@ -42,7 +43,7 @@ const App = () => {
                   type='text'
               />
               <button
-                  className='bg-sky-400'
+                  className='btn'
                   onClick={() => {
                       if (attributes.length !== 4) {
                           alert('请输入四位数');
