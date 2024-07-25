@@ -52,7 +52,7 @@ export function calculateCost(attributes: string) {
       }
     }
   };
-// 4 8 32 36
+// 8升9 4 8 32 36
   // 1Z  600仙玉
 
 //荣破 1400咸鱼
