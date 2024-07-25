@@ -11,9 +11,16 @@ steps:
       SSH_KEY:
         from_secret: ssh_key
   - name: build
-    image: registry.cn-shanghai.aliyuncs.com/zzf2001/pnpm
-    depends_on: [clone]
+    image: node:lts-alpine
+    depends_on:
+      - clone
+    environment:
+      TZ: Asia/Shanghai
     commands:
+      - corepack enable
+      - corepack prepare pnpm@latest-8 --activate
+      - pnpm config set store-dir .pnpm-store
+      - pnpm -v
       - pnpm install
       - pnpm run build
   - name: oss
