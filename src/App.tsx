@@ -3,9 +3,20 @@ import {ChangeEvent, useState} from "react";
 import {calculateCost} from "./calculateCost.ts";
 
 const App = () => {
+    const [steps, setSteps] = useState<string[]>([]);
     const [attributes, setAttributes] = useState('');
     const [cost, setCost] = useState(0);
-  return (
+    const handleCalculate = () => {
+        if (attributes.length !== 4) {
+            alert('请输入四位数');
+            return;
+        }
+        const result = calculateCost(attributes);
+        setCost(result.cost);
+        setSteps(result.steps);
+    };
+
+    return (
       <div>
           <h5>寻仙圣宠升级到 8888 计算器</h5>
           <div>
@@ -24,13 +35,21 @@ const App = () => {
                       第四个7升8 16个融魄 <em>22400仙玉</em>
                   </li>
               </ul>
+              <ul style={{
+                  maxHeight: '200px',
+                  overflowY:'auto'
+              }}>
+                  {steps.map((step, index) => (
+                      <li key={index}>{step}</li>
+                  ))}
+              </ul>
               <p className='text-red-900'>共计所需{cost}仙玉</p>
               <input
                   className='border-2 border-slate-300'
                   minLength={4}
                   maxLength={4}
                   value={attributes}
-                  onInput={(event:ChangeEvent<HTMLInputElement>) => {
+                  onInput={(event: ChangeEvent<HTMLInputElement>) => {
                       const attributes = event.target.value;
                       setAttributes(attributes);
                   }}
@@ -42,14 +61,14 @@ const App = () => {
                           alert('请输入四位数');
                           return;
                       }
-                      setCost(calculateCost(attributes));
+                      handleCalculate();
                   }}
               >
                   计算
               </button>
           </div>
       </div>
-  );
+    );
 };
 
 export default App;
