@@ -6,6 +6,7 @@ const Home = () => {
     const [steps, setSteps] = useState<string[]>([]);
     const [attributes, setAttributes] = useState('');
     const [cost, setCost] = useState(0);
+    const [target, setTarget] = useState(8);
     const handleCalculate = (target:number) => {
         if (attributes.length !== 4) {
             alert('请输入四位数');
@@ -42,7 +43,9 @@ const Home = () => {
                         </tbody>
                     </table>
                 </div>
-                <p role="alert" className="alert">共计所需{cost}仙玉</p>
+                <p role="alert" className="alert">
+                    <span>升级到 <span className={'font-bold'}>{target.toString().repeat(4)}</span> 共计所需{cost}仙玉</span>
+                </p>
                 <div className="divider"></div>
                 <div className='flex gap-x-2'>
                     <input
@@ -65,6 +68,7 @@ const Home = () => {
                                 return;
                             }
                             handleCalculate(8);
+                            setTarget(8);
                         }}
                     >
                         计算升级到8888
@@ -77,6 +81,7 @@ const Home = () => {
                                 return;
                             }
                             handleCalculate(9);
+                            setTarget(9);
                         }}
                     >
                         计算升级到9999
