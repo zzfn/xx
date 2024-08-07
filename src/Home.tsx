@@ -47,7 +47,7 @@ const Home = () => {
                     <span>升级到 <span className={'font-bold'}>{target.toString().repeat(4)}</span> 共计所需{cost}仙玉</span>
                 </p>
                 <div className="divider"></div>
-                <div className='flex gap-x-2'>
+                <div className='flex gap-x-2 flex-wrap'>
                     <input
                         placeholder={'宝宝四维，如6688'}
                         className='input input-bordered'
