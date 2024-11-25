@@ -1,29 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Sword, Book, Map, Crown, Flame } from "lucide-react";
+import Banner from '@/components/home/Banner';
 
 export default function Home() {
   return (
     <div className="min-h-screen">
       {/* 顶部Banner */}
-      <div className="relative h-[400px] w-full">
-        <Image
-          src="/banner.jpg" // 需要添加寻仙游戏的banner图
-          alt="寻仙游戏banner"
-          fill
-          className="object-cover"
-          priority
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent">
-          <div className="container mx-auto h-full flex items-center px-4">
-            <div className="text-white">
-              <h1 className="text-4xl md:text-5xl font-bold mb-4">寻仙游戏攻略</h1>
-              <p className="text-lg md:text-xl text-gray-200">探索修仙世界，掌握游戏精髓</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
+      <Banner />
       {/* 主要内容区域 */}
       <div className="container mx-auto px-4 py-12">
         {/* 快速入口 */}
@@ -139,7 +123,6 @@ function SectionHeader({ title }: { title: string }) {
     </div>
   );
 }
-
 // 攻略卡片组件
 function GuideCard({ title, image, category, views }: {
   title: string;
@@ -200,3 +183,4 @@ function GuideListItem({ title, category, date, author }: {
     </Link>
   );
 }
+
