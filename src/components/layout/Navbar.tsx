@@ -37,6 +37,15 @@ const navigation = [
     name: 'PVP攻略',
     href: '/guides/pvp',
   },
+  {
+    name: '怀旧寻仙',
+    href: '/guides/classic',
+    children: [
+      { name: '2010版', href: '/guides/classic/2010' },
+      { name: '2012版', href: '/guides/classic/2012' },
+      { name: '2014版', href: '/guides/classic/2014' },
+    ],
+  },
 ];
 
 export default function Navbar() {
