@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Sword, Book, Map, Crown, Flame } from "lucide-react";
-import Banner from '@/components/home/Banner';
+import Banner from "@/components/home/Banner";
 
 export default function Home() {
   return (
@@ -12,25 +12,25 @@ export default function Home() {
       <div className="container mx-auto px-4 py-12">
         {/* 快速入口 */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
-          <QuickLink 
+          <QuickLink
             href="/guides/newbie"
             title="新手指南"
             icon={<Book className="w-6 h-6" />}
             description="入门必读攻略"
           />
-          <QuickLink 
+          <QuickLink
             href="/guides/classes"
             title="职业攻略"
             icon={<Sword className="w-6 h-6" />}
             description="职业特色详解"
           />
-          <QuickLink 
+          <QuickLink
             href="/guides/maps"
             title="地图攻略"
             icon={<Map className="w-6 h-6" />}
             description="地图资源分布"
           />
-          <QuickLink 
+          <QuickLink
             href="/guides/pvp"
             title="PVP攻略"
             icon={<Crown className="w-6 h-6" />}
@@ -84,14 +84,19 @@ export default function Home() {
 }
 
 // 快速入口组件
-function QuickLink({ href, title, icon, description }: {
+function QuickLink({
+  href,
+  title,
+  icon,
+  description,
+}: {
   href: string;
   title: string;
   icon: React.ReactNode;
   description: string;
 }) {
   return (
-    <Link 
+    <Link
       href={href}
       className="group p-6 bg-white dark:bg-gray-800 rounded-lg shadow-sm hover:shadow-md transition-shadow"
     >
@@ -100,7 +105,9 @@ function QuickLink({ href, title, icon, description }: {
           {icon}
         </div>
         <h3 className="font-semibold mb-1">{title}</h3>
-        <p className="text-sm text-gray-600 dark:text-gray-400">{description}</p>
+        <p className="text-sm text-gray-600 dark:text-gray-400">
+          {description}
+        </p>
       </div>
     </Link>
   );
@@ -114,7 +121,7 @@ function SectionHeader({ title }: { title: string }) {
         <Flame className="w-6 h-6 text-red-500" />
         {title}
       </h2>
-      <Link 
+      <Link
         href={`/guides`}
         className="text-primary-600 dark:text-primary-400 hover:underline flex items-center gap-1"
       >
@@ -124,7 +131,12 @@ function SectionHeader({ title }: { title: string }) {
   );
 }
 // 攻略卡片组件
-function GuideCard({ title, image, category, views }: {
+function GuideCard({
+  title,
+  image,
+  category,
+  views,
+}: {
   title: string;
   image: string;
   category: string;
@@ -134,15 +146,12 @@ function GuideCard({ title, image, category, views }: {
     <Link href="#" className="group">
       <div className="bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
         <div className="relative h-48">
-          <Image
-            src={image}
-            alt={title}
-            fill
-            className="object-cover"
-          />
+          <Image src={image} alt={title} fill className="object-cover" />
         </div>
         <div className="p-4">
-          <div className="text-sm text-gray-600 dark:text-gray-400 mb-2">{category}</div>
+          <div className="text-sm text-gray-600 dark:text-gray-400 mb-2">
+            {category}
+          </div>
           <h3 className="font-semibold mb-2 group-hover:text-primary-600 dark:group-hover:text-primary-400">
             {title}
           </h3>
@@ -156,14 +165,19 @@ function GuideCard({ title, image, category, views }: {
 }
 
 // 攻略列表项组件
-function GuideListItem({ title, category, date, author }: {
+function GuideListItem({
+  title,
+  category,
+  date,
+  author,
+}: {
   title: string;
   category: string;
   date: string;
   author: string;
 }) {
   return (
-    <Link 
+    <Link
       href="#"
       className="block bg-white dark:bg-gray-800 p-4 rounded-lg hover:shadow-md transition-shadow"
     >
@@ -176,11 +190,8 @@ function GuideListItem({ title, category, date, author }: {
             {category} · {author}
           </div>
         </div>
-        <div className="text-sm text-gray-600 dark:text-gray-400">
-          {date}
-        </div>
+        <div className="text-sm text-gray-600 dark:text-gray-400">{date}</div>
       </div>
     </Link>
   );
 }
-
