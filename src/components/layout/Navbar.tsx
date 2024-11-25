@@ -102,9 +102,14 @@ export default function Navbar() {
     </nav>
   );
 }
-
+// 移动端导航项组件
+interface NavItemType {
+    name: string;
+    href: string;
+    children?: { name: string; href: string; }[];
+  }
 // 导航项组件
-function NavItem({ item, pathname }: { item: any; pathname: string }) {
+function NavItem({ item, pathname }: { item: NavItemType; pathname: string }) {
   const [isOpen, setIsOpen] = useState(false);
   const isActive = pathname.startsWith(item.href);
 
@@ -128,7 +133,7 @@ function NavItem({ item, pathname }: { item: any; pathname: string }) {
         {/* 下拉菜单 */}
         <div className="absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-white dark:bg-gray-800 ring-1 ring-black ring-opacity-5 hidden group-hover:block">
           <div className="py-1">
-            {item.children.map((child: any) => (
+            {item.children.map((child: NavItemType) => (
               <Link
                 key={child.name}
                 href={child.href}
@@ -159,8 +164,7 @@ function NavItem({ item, pathname }: { item: any; pathname: string }) {
   );
 }
 
-// 移动端导航项组件
-function MobileNavItem({ item, pathname }: { item: any; pathname: string }) {
+function MobileNavItem({ item, pathname }: { item: NavItemType; pathname: string }) {
   const [isOpen, setIsOpen] = useState(false);
   const isActive = pathname.startsWith(item.href);
 
@@ -183,7 +187,7 @@ function MobileNavItem({ item, pathname }: { item: any; pathname: string }) {
         
         {isOpen && (
           <div className="ml-4">
-            {item.children.map((child: any) => (
+            {item.children.map((child: NavItemType) => (
               <Link
                 key={child.name}
                 href={child.href}
