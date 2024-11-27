@@ -139,9 +139,9 @@ function NavItem({ item, pathname }: { item: NavItemType; pathname: string }) {
           <ChevronDown className="w-4 h-4" />
         </button>
         
-        {/* 下拉菜单 */}
-        <div className="absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-white dark:bg-gray-800 ring-1 ring-black ring-opacity-5 hidden group-hover:block">
-          <div className="py-1">
+        {/* 修改下拉菜单的定位和间距 */}
+        <div className="absolute left-0 w-48 rounded-md shadow-lg bg-white dark:bg-gray-800 ring-1 ring-black ring-opacity-5 hidden group-hover:block">
+          <div className="py-1 mt-[-4px] pt-[4px]">
             {item.children.map((child: NavItemType) => (
               <Link
                 key={child.name}
