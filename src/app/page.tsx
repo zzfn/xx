@@ -68,7 +68,7 @@ export default function Home() {
 
         {/* 最新攻略 */}
         <section className="mb-12">
-          <SectionHeader title="最新攻略" />
+          <SectionHeader title="最新攻略" icon={<Bookmark className="w-6 h-6 text-gray-600" />} />
           <div className="space-y-4">
             {[1, 2, 3, 4, 5].map((i) => (
               <GuideListItem
