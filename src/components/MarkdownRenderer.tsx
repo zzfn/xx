@@ -18,6 +18,7 @@ const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({
     marked.setOptions({
       gfm: true, // GitHub Flavored Markdown
       breaks: true, // 转换换行符为 <br>
+      // @ts-ignore
       highlight: function (code, lang) {
         if (lang && hljs.getLanguage(lang)) {
           try {
@@ -37,7 +38,7 @@ const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({
       // 解析 Markdown 为 HTML
       const rawHtml = marked(markdown);
       // 净化 HTML 以防止 XSS 攻击
-      const cleanHtml = DOMPurify.sanitize(rawHtml);
+      const cleanHtml = DOMPurify.sanitize(rawHtml as string);
       return cleanHtml;
     } catch (error) {
       console.error('Markdown 解析错误:', error);
