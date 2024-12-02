@@ -13,10 +13,7 @@ interface GuideDetail {
   createdAt: string;
   viewCount: number;
   likeCount: number;
-  author: {
-    name: string;
-    avatar: string;
-  };
+  createdBy: string;
 }
 
 export default function GuideDetailPage() {
