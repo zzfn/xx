@@ -1,10 +1,7 @@
 import { NextResponse } from 'next/server';
 
-export async function GET(
-  request: Request,
-  { params }: { params: { id: string } }
-) {
-  console.log(111,request,params);
+export async function GET(request: Request) {
+  console.log(111,request);
   try {
     const response = await fetch(`https://api.ccw.es/v1/articles/${params.id}`);
     const data = await response.json();
