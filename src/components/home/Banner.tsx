@@ -32,13 +32,13 @@ export default function Banner() {
               className="px-6 py-2 bg-amber-500 hover:bg-amber-600 text-white rounded-full transition-colors"
             >
               新手指南
-            </a>
-            <a
+            </Link>
+            <Link
               href="/guides/classes"
               className="px-6 py-2 bg-white/10 hover:bg-white/20 text-white rounded-full backdrop-blur-sm transition-colors"
             >
               职业攻略
-            </a>
+            </Link>
           </div>
         </div>
       </div>
