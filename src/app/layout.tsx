@@ -13,9 +13,9 @@ const notoSansSC = Noto_Sans_SC({
 });
 
 export const metadata: Metadata = {
-  title: "寻仙游戏攻略 - 修仙之路从这里开始",
-  description: "最全面的寻仙游戏攻略网站，提供新手教程、职业攻略、法宝系统、副本攻略等全方位游戏指南",
-  keywords: "寻仙,寻仙攻略,寻仙游戏,修仙游戏,法宝攻略,职业攻略",
+  title: "小团子的寻仙攻略站 - 和糯米小团子一起修仙",
+  description: "欢迎来到小团子的寻仙游戏攻略网站！这里有糯米小团子整理的新手教程、职业攻略、法宝系统等实用攻略，带你轻松愉快地畅游修仙世界",
+  keywords: "寻仙,寻仙攻略,小团子,糯米小团子,修仙游戏,游戏攻略,法宝攻略,职业攻略",
 };
 
 export default function RootLayout({

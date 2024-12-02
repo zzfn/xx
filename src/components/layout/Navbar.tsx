@@ -11,41 +11,41 @@ const navigation = [
     name: '新手指南',
     href: '/guides/newbie',
   },
-  {
-    name: '职业攻略',
-    href: '/guides/classes',
-    children: [
-      { name: '天音', href: '/guides/classes/tianyin' },
-      { name: '飞羽', href: '/guides/classes/feiyu' },
-      { name: '魅影', href: '/guides/classes/meiying' },
-      { name: '血煞', href: '/guides/classes/xuesha' },
-    ],
-  },
-  {
-    name: '法宝系统',
-    href: '/guides/fabao',
-  },
-  {
-    name: '副本攻略',
-    href: '/guides/dungeons',
-  },
-  {
-    name: '任务攻略',
-    href: '/guides/quests',
-  },
-  {
-    name: 'PVP攻略',
-    href: '/guides/pvp',
-  },
-  {
-    name: '怀旧寻仙',
-    href: '/guides/classic',
-    children: [
-      { name: '2010版', href: '/guides/classic/2010' },
-      { name: '2012版', href: '/guides/classic/2012' },
-      { name: '2014版', href: '/guides/classic/2014' },
-    ],
-  },
+  // {
+  //   name: '职业攻略',
+  //   href: '/guides/classes',
+  //   children: [
+  //     { name: '天音', href: '/guides/classes/tianyin' },
+  //     { name: '飞羽', href: '/guides/classes/feiyu' },
+  //     { name: '魅影', href: '/guides/classes/meiying' },
+  //     { name: '血煞', href: '/guides/classes/xuesha' },
+  //   ],
+  // },
+  // {
+  //   name: '法宝系统',
+  //   href: '/guides/fabao',
+  // },
+  // {
+  //   name: '副本攻略',
+  //   href: '/guides/dungeons',
+  // },
+  // {
+  //   name: '任务攻略',
+  //   href: '/guides/quests',
+  // },
+  // {
+  //   name: 'PVP攻略',
+  //   href: '/guides/pvp',
+  // },
+  // {
+  //   name: '怀旧寻仙',
+  //   href: '/guides/classic',
+  //   children: [
+  //     { name: '2010版', href: '/guides/classic/2010' },
+  //     { name: '2012版', href: '/guides/classic/2012' },
+  //     { name: '2014版', href: '/guides/classic/2014' },
+  //   ],
+  // },
 ];
 
 export default function Navbar() {
@@ -59,8 +59,8 @@ export default function Navbar() {
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
             <Logo />
-            <span className="text-xl font-bold bg-gradient-to-r from-amber-600 to-orange-600 bg-clip-text text-transparent">
-              寻仙攻略
+            <span className="text-xl font-bold bg-gradient-to-r from-slate-600 to-gray-600 bg-clip-text text-transparent">
+              修习小记
             </span>
           </Link>
 

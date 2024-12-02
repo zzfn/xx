@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Sword, Book, Map, Crown, Flame } from "lucide-react";
+import { ArrowRight, BookOpen, Layout, BarChart, Target, Bookmark } from "lucide-react";
 import Banner from "@/components/home/Banner";
 
 export default function Home() {
@@ -14,33 +14,36 @@ export default function Home() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
           <QuickLink
             href="/guides/newbie"
-            title="新手指南"
-            icon={<Book className="w-6 h-6" />}
-            description="入门必读攻略"
+            title="入门指南"
+            icon={<BookOpen className="w-6 h-6" />}
+            description="基础知识概览"
           />
           <QuickLink
             href="/guides/classes"
-            title="职业攻略"
-            icon={<Sword className="w-6 h-6" />}
-            description="职业特色详解"
+            title="进阶技巧"
+            icon={<Target className="w-6 h-6" />}
+            description="深入专题研究"
           />
           <QuickLink
             href="/guides/maps"
-            title="地图攻略"
-            icon={<Map className="w-6 h-6" />}
-            description="地图资源分布"
+            title="资源分布"
+            icon={<Layout className="w-6 h-6" />}
+            description="关键点位总览"
           />
           <QuickLink
             href="/guides/pvp"
-            title="PVP攻略"
-            icon={<Crown className="w-6 h-6" />}
-            description="竞技场打法攻略"
+            title="技能提升"
+            icon={<BarChart className="w-6 h-6" />}
+            description="实践要点分析"
           />
         </div>
 
-        {/* 热门攻略 */}
+        {/* 热门攻略改为精选内容 */}
         <section className="mb-12">
-          <SectionHeader title="热门攻略" />
+          <SectionHeader
+            title="精选内容"
+            icon={<Bookmark className="w-6 h-6 text-gray-600" />}
+          />
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <GuideCard
               title="最强法宝搭配推荐"
@@ -114,11 +117,11 @@ function QuickLink({
 }
 
 // 区块标题组件
-function SectionHeader({ title }: { title: string }) {
+function SectionHeader({ title, icon }: { title: string; icon: React.ReactNode }) {
   return (
     <div className="flex items-center justify-between mb-6">
       <h2 className="text-2xl font-bold flex items-center gap-2">
-        <Flame className="w-6 h-6 text-red-500" />
+        {icon}
         {title}
       </h2>
       <Link

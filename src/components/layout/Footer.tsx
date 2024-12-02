@@ -1,7 +1,7 @@
 export default function Footer() {
   return (
     <footer className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-md border-t border-amber-100 dark:border-gray-700">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      {/* <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
             <h3 className="text-sm font-semibold text-gray-900 dark:text-white">
@@ -81,7 +81,7 @@ export default function Footer() {
             © {new Date().getFullYear()} 寻仙攻略网. All rights reserved.
           </p>
         </div>
-      </div>
+      </div> */}
     </footer>
   );
 } 
