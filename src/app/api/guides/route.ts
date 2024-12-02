@@ -4,7 +4,7 @@ export async function GET(request: Request) {
   // const { searchParams } = new URL(request.url);
   // const page = parseInt(searchParams.get('page') || '1');
   // const limit = parseInt(searchParams.get('limit') || '10');
-
+  console.log(111,request);
   try {
     // 这里替换为你的实际 API 调用
     const response = await fetch(`https://api.ccw.es/v1/articles`);
