@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 export default function Banner() {
   return (
     <div className="relative h-[400px] w-full overflow-hidden">
@@ -25,7 +27,7 @@ export default function Banner() {
             十年情怀，助你踏上修仙之路
           </p>
           <div className="flex gap-4">
-            <a
+            <Link
               href="/guides/newbie"
               className="px-6 py-2 bg-amber-500 hover:bg-amber-600 text-white rounded-full transition-colors"
             >
